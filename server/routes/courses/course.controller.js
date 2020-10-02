@@ -1,4 +1,7 @@
 const Course = require("../../models/course.model");
+const Student = require("../../models/student.model");
+
+// Route: api/course/all
 const getAllCourses = (req, res) => {
 	Course.find()
 		.then((course) => {
@@ -6,13 +9,33 @@ const getAllCourses = (req, res) => {
 				success: true,
 				data: course,
 			});
-			console.log("Cousres Object: " + course);
+			console.log("Course Object: " + course);
 		})
 		.catch((err) => {
 			console.log(err);
 		});
 };
 
+//Route: api/course/each
+const getCourse = (req, res) => {
+	var { courseName } = req.params;
+	Course.findOne(
+		{
+			courseName: "AI",
+		},
+		{ students: 100 }
+	)
+		.then((result) => {
+			Student.find({ _id: { $in: result["students"] } })
+				.then((student) => {
+					res.json(student);
+				})
+				.catch((e) => console.log(e));
+		})
+		.catch((e) => console.log(e));
+};
+
+//Route: Create Course
 const createCourse = async (req, res) => {
 	let { courseID, courseName, description, students } = req.body;
 
@@ -34,4 +57,5 @@ const createCourse = async (req, res) => {
 module.exports = {
 	getAllCourses,
 	createCourse,
+	getCourse,
 };
