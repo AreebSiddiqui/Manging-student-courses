@@ -16,7 +16,12 @@
 ### How to run client
 
 - Make sure you have node installed.
+
+#### Locally
 - Clone the repository and run `cd client/gr-client && npm i && npm start`
+
+#### Netlify link
+https://5f78b007340e1de12e627356--studentms.netlify.app/
 
 #### Tech
 - React
