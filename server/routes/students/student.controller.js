@@ -29,17 +29,22 @@ const saveStudentCourse = async (newStudent) => {
 			.catch((e) => console.log(e))
 	);
 };
+var studentID;
+const { generateStudentUid } = require("./StudentUid");
+const getUid = async () => {
+	new Promise(async (req, res) => {
+		try {
+			studentID = await generateStudentUid();
+			console.log(studentID);
+		} catch (e) {
+			console.log(e);
+		}
+	});
+};
 
 const createStudent = async (req, res) => {
-	let {
-		studentID,
-		firstName,
-		lastName,
-		email,
-		contact,
-		address,
-		courses,
-	} = req.body;
+	getUid();
+	let { firstName, lastName, email, contact, address, courses } = req.body;
 
 	const newStudent = new Student({
 		studentID,

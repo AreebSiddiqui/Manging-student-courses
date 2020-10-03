@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import PostForm from "./Components/PostStudentForm";
-import SelectCourse from "./Components/SelectCourse";
 import StudentData from "./Components/displayStudent";
 import CourseData from "./Components/displayCourse";
 import PostCourse from "./Components/PostCourse";

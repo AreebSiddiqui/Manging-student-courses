@@ -76,7 +76,7 @@ const PostStudentForm = () => {
 		e.preventDefault();
 		axios
 			.post(`${BASE_URL}/student/create`, {
-				studentID,
+				// studentID,
 				firstName,
 				lastName,
 				address,
@@ -91,7 +91,7 @@ const PostStudentForm = () => {
 	};
 	const classes = useStyles();
 	const theme = useTheme();
-	const [studentID, setStudentID] = useState("");
+	// const [studentID, setStudentID] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
@@ -134,7 +134,7 @@ const PostStudentForm = () => {
 				<div>
 					{/* <Alert severity="success">Student Successfull enrolled</Alert>
 					<br /> */}
-					<TextField
+					{/* <TextField
 						required
 						name="studentID"
 						id="outlined-required"
@@ -142,7 +142,7 @@ const PostStudentForm = () => {
 						value={studentID}
 						variant="outlined"
 						onChange={(e) => setStudentID(e.target.value)}
-					/>
+					/> */}
 					<br />
 					<TextField
 						required
