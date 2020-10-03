@@ -17,3 +17,9 @@
 
 - Make sure you have node installed.
 - Clone the repository and run `cd client/gr-client && npm i && npm start`
+
+#### Tech
+- React
+- Express
+- MongoDB
+- Docker
