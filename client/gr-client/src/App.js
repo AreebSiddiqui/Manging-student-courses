@@ -1,10 +1,20 @@
 import React from "react";
 import "./App.css";
 import PostForm from "./Components/PostStudentForm";
+import SelectCourse from "./Components/SelectCourse";
+import StudentData from "./Components/displayStudent";
+import CourseData from "./Components/displayCourse";
+import PostCourse from "./Components/PostCourse";
+import Nav from "./Components/Nav";
 function App() {
 	return (
 		<div className="App">
-			<PostForm />
+			<Nav />
+			{/* <PostForm /> */}
+			{/* <PostForm /> */}
+			{/* <StudentData /> */}
+			{/* <CourseData /> */}
+			{/* <PostCourse />{" "} */}
 		</div>
 	);
 }
